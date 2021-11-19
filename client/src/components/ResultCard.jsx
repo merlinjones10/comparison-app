@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -16,10 +17,24 @@ import DetailsGrid from './DetailsGrid';
 import DealCardFooter from './DealCardFooter';
 import { List, ListItem } from '@mui/material';
 import ArrowForwardIosTwoToneIcon from '@mui/icons-material/ArrowForwardIosTwoTone';
+import { Checkbox } from '@mui/material';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+
 // insert semantic components for card i.e card actopm, content etc.
-const ResultCard = ({ deal }) => {
-  const { provider_name, deal_name, provider_rating, provider_logo_image_url } = deal;
-  console.log({ deal });
+const ResultCard = ({ deal, onCompare }) => {
+  const { provider_name, deal_name, provider_rating, provider_logo_image_url, deal_id } = deal;
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+    onCompare(deal_id, event.target.checked);
+
+    // console.log(event.target);
+  };
+
   return (
     <Container>
       <Card>
@@ -32,7 +47,16 @@ const ResultCard = ({ deal }) => {
             />
           </Grid>
           <Grid item xs={4}>
-            <button>Compare</button>
+            {/* <button>Compare</button> */}
+            <Typography variant="subtitle1">Compare</Typography>
+            <Checkbox
+              {...label}
+              checked={checked}
+              icon={<BookmarkBorderIcon />}
+              checkedIcon={<BookmarkIcon />}
+              onChange={handleChange}
+              // onClick={() => onCompare(deal_id)}
+            />
           </Grid>
           <Grid item xs={8}>
             <CardContent>
