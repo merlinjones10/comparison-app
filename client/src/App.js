@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import Result from './components/Result';
+import ResultCard from './components/ResultCard';
 import './App.css';
 function App() {
   const [backendData, setBackendData] = useState({});
@@ -9,7 +10,11 @@ function App() {
   }, []);
   console.log(backendData);
 
-  return <div></div>;
+  return (
+    <div>
+      <Result></Result>
+    </div>
+  );
 }
 
 export default App;
