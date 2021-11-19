@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Result from './components/Result';
 import ResultCard from './components/ResultCard';
 import './App.css';
+import { apiContext } from './context/ApiContext';
+import Layout from './components/Layout';
+//
 function App() {
   const [backendData, setBackendData] = useState({});
 
@@ -11,9 +14,13 @@ function App() {
   console.log(backendData);
 
   return (
-    <div>
-      <Result></Result>
-    </div>
+    <apiContext.Provider value={backendData}>
+      <Layout>
+        <div>
+          <Result></Result>
+        </div>
+      </Layout>
+    </apiContext.Provider>
   );
 }
 
