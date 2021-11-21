@@ -22,7 +22,6 @@ const rows = [
 
 function BasicTable({ deal }) {
   const { provider_name, provider_logo_image_url, deal_name } = deal;
-  console.log(deal);
   return (
     <>
       <div>
@@ -49,7 +48,7 @@ function BasicTable({ deal }) {
                 <TableCell component="th" scope="row">
                   Customer Rating
                 </TableCell>
-                <TableCell align="right">{(deal.provider_rating * 10) / 2}</TableCell>
+                <TableCell align="right">{(deal.provider_rating * 10) / 2} / 5</TableCell>
               </TableRow>
               <TableRow key="speed" sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                 <TableCell component="th" scope="row">
@@ -85,7 +84,33 @@ function BasicTable({ deal }) {
                 <TableCell component="th" scope="row">
                   Price information
                 </TableCell>
-                <TableCell align="right">£{deal.price_info}</TableCell>
+                <TableCell align="right">{deal.price_info}</TableCell>
+              </TableRow>
+              <TableRow key="setup_cost" sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                <TableCell component="th" scope="row">
+                  Set up cost
+                </TableCell>
+                <TableCell align="right">
+                  {deal.set_up_cost === 0 ? 'Free' : deal.set_up_cost}
+                </TableCell>
+              </TableRow>
+              <TableRow
+                key="yearly_cost"
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  Yearly cost
+                </TableCell>
+                <TableCell align="right">£{deal.yearly_cost}</TableCell>
+              </TableRow>
+              <TableRow
+                key="broadband_type"
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  Broadband type
+                </TableCell>
+                <TableCell align="right">{deal.broadband_type}</TableCell>
               </TableRow>
             </TableBody>
           </Table>
