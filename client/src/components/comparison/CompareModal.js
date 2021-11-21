@@ -1,13 +1,6 @@
 import React from 'react';
-import { useContext, useState } from 'react';
-import { apiContext } from '../context/ApiContext';
-
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import Table from './comparison/Table';
-import { Container, Grid, Stack } from '@mui/material';
+import { Container, Stack, Box, Typography, Modal, Button } from '@mui/material';
+import Table from './Table';
 import CompareDrawer from './CompareDrawer';
 
 const style = {
@@ -37,9 +30,12 @@ const CompareModal = ({ comparisonIds }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Compare
-          </Typography>
+          <Container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Typography variant="h6" component="h2">
+              Compare
+            </Typography>
+            <Button onClick={handleClose}>X Close X</Button>
+          </Container>
 
           <div style={{ display: 'flex' }}>
             <Container>

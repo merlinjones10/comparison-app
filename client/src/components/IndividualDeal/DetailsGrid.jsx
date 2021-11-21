@@ -1,16 +1,9 @@
-import React from "react"
-import { Grid } from "@mui/material"
-import { Typography } from "@mui/material"
+import React from 'react';
+import { Grid, Typography } from '@mui/material';
 
 const DetailsGrid = ({ deal }) => {
-  const {
-    contract_info,
-    price_info,
-    internet_speed,
-    data_limits,
-    monthly_price,
-  } = deal
-  console.log()
+  const { contract_info, set_up_cost, internet_speed, monthly_price } = deal;
+  console.log();
   return (
     <div>
       <Grid container spacing={2}>
@@ -24,7 +17,7 @@ const DetailsGrid = ({ deal }) => {
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h6" component="h6">
-            Downloads: {data_limits}
+            {deal.set_up_cost === 0 ? 'Free set up.' : `£${set_up_cost} set up fee.`}
           </Typography>
         </Grid>
         <Grid item xs={6}>
@@ -34,7 +27,7 @@ const DetailsGrid = ({ deal }) => {
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default DetailsGrid
+export default DetailsGrid;

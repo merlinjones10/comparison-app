@@ -1,25 +1,15 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { useContext } from 'react';
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import { Grid } from '@mui/material';
-import { Container } from '@mui/material';
-import { Button } from '@mui/material';
-import { CardActionArea } from '@mui/material';
-import { CardActions } from '@mui/material';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import { CardContent } from '@mui/material';
-import { apiContext } from '../../context/ApiContext';
-import DetailsGrid from './DetailsGrid';
+import React, { useState } from 'react';
 import DealCardFooter from './DealCardFooter';
+import DetailsGrid from './DetailsGrid';
+// MUI
+import { Card, CardHeader, CardContent } from '@mui/material/';
+import { Grid, Container, Button, Avatar, Typography, Checkbox } from '@mui/material';
 import { List, ListItem } from '@mui/material';
-import ArrowForwardIosTwoToneIcon from '@mui/icons-material/ArrowForwardIosTwoTone';
-import { Checkbox } from '@mui/material';
+
+// Icons
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import ArrowForwardIosTwoToneIcon from '@mui/icons-material/ArrowForwardIosTwoTone';
 
 // insert semantic components for card i.e card actopm, content etc.
 const ResultCard = ({ deal, onCompare }) => {
@@ -45,7 +35,6 @@ const ResultCard = ({ deal, onCompare }) => {
             />
           </Grid>
           <Grid item xs={4}>
-            {/* <button>Compare</button> */}
             <Typography variant="subtitle1">Compare</Typography>
             <Checkbox
               {...label}
@@ -53,7 +42,6 @@ const ResultCard = ({ deal, onCompare }) => {
               icon={<BookmarkBorderIcon />}
               checkedIcon={<BookmarkIcon />}
               onChange={handleChange}
-              // onClick={() => onCompare(deal_id)}
             />
           </Grid>
           <Grid item xs={8}>

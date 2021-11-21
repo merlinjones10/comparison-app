@@ -3,7 +3,7 @@ import Result from './components/Result';
 import './App.css';
 import { apiContext } from './context/ApiContext';
 import Layout from './components/Layout/Layout';
-import CompareModal from './components/CompareModal';
+import CompareModal from './components/comparison/CompareModal';
 //
 function App() {
   // Add data to list. I get true or false for the id of the item
