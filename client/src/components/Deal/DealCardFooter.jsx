@@ -1,7 +1,6 @@
 import React from 'react';
 import { Rating } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/material';
 
 const DealCardFooter = ({ rating }) => {
   const starValue = (rating * 10) / 2;

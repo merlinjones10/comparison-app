@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Table from './comparison/Table';
 import { Container, Grid, Stack } from '@mui/material';
+import CompareDrawer from './CompareDrawer';
 
 const style = {
   position: 'absolute',
@@ -24,16 +25,11 @@ const style = {
 
 const CompareModal = ({ comparisonIds }) => {
   const [open, setOpen] = React.useState(false);
-  // const [dealsToCompare, setDealsToCompare] = useState(toCompare);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  // const { deals } = useContext(apiContext);
-
-  console.log(comparisonIds[0]);
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -53,14 +49,12 @@ const CompareModal = ({ comparisonIds }) => {
                   .map((deal) => (
                     <Table deal={deal} />
                   ))}
-                {/* map table here */}
-                {/* <Table></Table> */}
-                {/* <Table></Table> */}
               </Stack>
             </Container>
           </div>
         </Box>
       </Modal>
+      <CompareDrawer handleOpen={handleOpen}></CompareDrawer>
     </div>
   );
 };
