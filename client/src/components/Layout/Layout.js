@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
-import sections from '../sectionDummyData';
+import sections from '../../sectionDummyData';
 // import { makeStyles } from '@mui/material';
 
 // const useStyles = makeStyles({

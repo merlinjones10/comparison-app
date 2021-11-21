@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { useContext } from 'react';
 import { apiContext } from '../context/ApiContext';
-import ResultCard from './ResultCard';
+import CompareModal from './CompareModal';
+import ResultCard from './Deal/ResultCard';
 
 const Result = ({ onCompare }) => {
   const { deals } = useContext(apiContext);
-  //   console.log(typeof deals);
   return (
     <>
+      <article>{/* <CompareModal></CompareModal> */}</article>
       <section>
         {typeof deals === 'undefined' ? (
           <p>Loading...</p>

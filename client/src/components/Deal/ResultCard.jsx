@@ -12,7 +12,7 @@ import { CardActions } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { CardContent } from '@mui/material';
-import { apiContext } from '../context/ApiContext';
+import { apiContext } from '../../context/ApiContext';
 import DetailsGrid from './DetailsGrid';
 import DealCardFooter from './DealCardFooter';
 import { List, ListItem } from '@mui/material';
@@ -31,8 +31,6 @@ const ResultCard = ({ deal, onCompare }) => {
   const handleChange = (event) => {
     setChecked(event.target.checked);
     onCompare(deal_id, event.target.checked);
-
-    // console.log(event.target);
   };
 
   return (

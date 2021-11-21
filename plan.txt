@@ -1,0 +1,3 @@
+modal that displays all comarison items
+temporary button that pops up when one compare item is clicked that launches the modal
+
