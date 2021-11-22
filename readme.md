@@ -9,4 +9,4 @@
 
 - cd -> APTAP-APP/server, run NPM install
 - npm run start
-  React app should be hosted on localhost:3000/
+ - React app should be hosted on localhost:3000/
