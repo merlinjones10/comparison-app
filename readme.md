@@ -7,6 +7,6 @@
 
 # Deployment build
 
-- cd -> /server, run NPM install
+- (first time only) cd -> /server, run NPM install
 - npm run start
  - React app should be hosted on localhost:5001/
