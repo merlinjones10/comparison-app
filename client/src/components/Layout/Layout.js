@@ -1,3 +1,4 @@
+import { grey } from '@mui/material/colors';
 import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
@@ -5,9 +6,11 @@ import Header from './Header';
 const Layout = ({ children }) => {
   return (
     <>
-      <Header title="Comparison Site"></Header>
-      <div>{children}</div>
-      <Footer description="" title="Comparison page"></Footer>
+      <main>
+        <Header title="Comparison Site"></Header>
+        <div style={{ backgroundColor: 'whitesmoke' }}>{children}</div>
+        <Footer description="" title="Comparison page"></Footer>
+      </main>
     </>
   );
 };

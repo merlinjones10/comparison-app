@@ -8,12 +8,12 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '75%',
-  height: '75%',
+  width: '100%',
+  height: '90%',
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
+  p: 2,
 };
 
 const CompareModal = ({ comparisonIds }) => {
@@ -23,30 +23,24 @@ const CompareModal = ({ comparisonIds }) => {
 
   return (
     <div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+      <Modal open={open} onClose={handleClose} aria-describedby="compare-box">
         <Box sx={style}>
           <Container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Typography variant="h6" component="h2">
-              Compare
-            </Typography>
-            <Button onClick={handleClose}>X Close X</Button>
+            <Typography variant="h3">Compare</Typography>
+            <Button onClick={handleClose} variant="outlined" color="error">
+              {' '}
+              Close{' '}
+            </Button>
           </Container>
 
-          <div style={{ display: 'flex' }}>
-            <Container>
-              <Stack direction="row">
-                {comparisonIds
-                  .filter((id) => id.compare)
-                  .map((deal) => (
-                    <Table deal={deal} />
-                  ))}
-              </Stack>
-            </Container>
+          <div style={{ marginTop: 30 }}>
+            <Stack direction="row">
+              {comparisonIds
+                .filter((id) => id.compare)
+                .map((deal) => (
+                  <Table deal={deal} />
+                ))}
+            </Stack>
           </div>
         </Box>
       </Modal>

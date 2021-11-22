@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Result from './components/Result';
-import './App.css';
 import { apiContext } from './context/ApiContext';
 import Layout from './components/Layout/Layout';
 import CompareModal from './components/comparison/CompareModal';
