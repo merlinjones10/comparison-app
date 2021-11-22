@@ -12,7 +12,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ArrowForwardIosTwoToneIcon from '@mui/icons-material/ArrowForwardIosTwoTone';
 
 // insert semantic components for card i.e card actopm, content etc.
-const ResultCard = ({ deal, onCompare }) => {
+const DealCard = ({ deal, onCompare }) => {
   const { provider_name, deal_name, provider_rating, provider_logo_image_url, deal_id } = deal;
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -95,4 +95,4 @@ const ResultCard = ({ deal, onCompare }) => {
   );
 };
 
-export default ResultCard;
+export default DealCard;

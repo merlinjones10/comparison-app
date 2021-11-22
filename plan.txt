@@ -1,3 +1,7 @@
-modal that displays all comarison items
-temporary button that pops up when one compare item is clicked that launches the modal
+Stretch goals: 
+- More info drawer.
+- Improve styling and responsiveness.
+- Data with tags 'cheapest/fastest to have a featured section
+- Script to start and run development server and react server at same time. 
+- Improve accessibility and semantic elements. 
 

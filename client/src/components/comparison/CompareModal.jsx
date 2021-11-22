@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Stack, Box, Typography, Modal, Button } from '@mui/material';
 import Table from './Table';
-import CompareDrawer from './CompareDrawer';
+import CompareDrawer from './CompareDrawer.jsx';
 
 const style = {
   position: 'absolute',
