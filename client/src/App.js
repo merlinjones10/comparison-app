@@ -16,19 +16,14 @@ function App() {
   const [backendData, setBackendData] = useState({});
 
   useEffect(() => {
-    try {
-      fetch('/api').then((response) =>
-        response.json().then((data) => {
-          setBackendData(data);
-          setComparisonIds(data.deals.map((elem) => ({ ...elem, compare: false })));
-        })
-      );
-    } catch (error) {
-      console.log(error + 'No Backend data');
-    }
+    fetch('/api').then((response) =>
+      response.json().then((data) => {
+        setBackendData(data);
+        setComparisonIds(data.deals.map((elem) => ({ ...elem, compare: false })));
+      })
+    );
   }, []);
 
-  // console.log(comparisonIds.filter((deal) => deal.compare).length === 0);
   return (
     <apiContext.Provider value={backendData}>
       <Layout>

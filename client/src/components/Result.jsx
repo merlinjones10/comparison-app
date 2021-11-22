@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { apiContext } from '../context/ApiContext';
 import CompareModal from './comparison/CompareModal';
 import ResultCard from './IndividualDeal/ResultCard';
+import { Container, LinearProgress, Skeleton } from '@mui/material';
 
 const Result = ({ onCompare }) => {
   const { deals } = useContext(apiContext);
@@ -10,7 +11,10 @@ const Result = ({ onCompare }) => {
     <>
       <section>
         {typeof deals === 'undefined' ? (
-          <p>Loading...</p>
+          <Container>
+            <LinearProgress />
+            <Skeleton variant="rectangular" height={700} />
+          </Container>
         ) : (
           deals.map((deal) => <ResultCard key={deal.deal_id} deal={deal} onCompare={onCompare} />)
         )}
